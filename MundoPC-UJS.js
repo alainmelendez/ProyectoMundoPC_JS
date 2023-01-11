@@ -28,6 +28,12 @@ class Raton extends DispositivoEntrada{
         return this._idRaton;
     }
     toString(){
-        return `Raton: []`;
+        return `Raton: [idRaton: ${this._idRaton}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca}]`;
     }
 }
+
+let raton1 = new Raton('USB', 'HP');
+console.log( raton1.toString() );
+let raton2 = new Raton('Bluetooth', 'Dell');
+raton2.marca = 'HP';
+console.log( raton2.toString() );
