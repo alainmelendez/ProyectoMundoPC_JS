@@ -47,6 +47,23 @@ class Teclado extends DispositivoEntrada{
     }
 }
 
+class Monitor{
+    static contadorMonitores = 0;
+
+    constructor(marca, tamaño){
+        this._idMonitor = ++ Monitor.contadorMonitores;
+        this._marca = marca;
+        this._tamaño = tamaño;
+        
+    }
+    get idMonitor(){
+        return this._idMonitor;
+    }
+    toString(){
+        return `Monitor: [idMonitor: ${this._idMonitor}, marca: ${this._marca} tamaño: ${this._tamaño} ]`;
+    }
+}
+
 let raton1 = new Raton('USB', 'HP');
 console.log( raton1.toString() );
 let raton2 = new Raton('Bluetooth', 'Dell');
@@ -57,3 +74,8 @@ let teclado1 = new Teclado('Bluetooth', 'MSI');
 let teclado2 = new Teclado('USB', 'Acer');
 console.log( teclado1.toString() );
 console.log( teclado2.toString() );
+
+let monitor1 = new Monitor('HP', '15');
+let monitor2 = new Monitor('Dell', '27');
+console.log( monitor1.toString() );
+console.log( monitor2.toString() );
